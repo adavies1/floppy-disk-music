@@ -1,0 +1,11 @@
+.Flexbox {
+    display: block;
+}
+
+@media (min-width: 700px) {
+    .Flexbox {
+        display: grid;
+        grid-template-columns: auto 250px;
+        width: 100%;
+    }
+}

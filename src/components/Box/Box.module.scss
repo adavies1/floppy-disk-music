@@ -1,0 +1,12 @@
+.Box {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    box-shadow: -5px -5px 10px 0px rgba(0, 0, 0, 0.1) inset, 5px 5px 10px 0px rgba(255, 255, 255, 0.08) inset, 4px 4px 4px rgba(0, 0, 0, 0.2);
+    margin: 1px;
+    padding: 10px;
+
+    &.orange {
+        background: #F7C95A;
+        box-shadow: 0 0 100px 0px rgba(255, 129, 0, 0.5) inset, -5px -5px 10px 0px rgba(0, 0, 0, 0.1) inset, 5px 5px 10px 0px rgba(255, 255, 255, 0.08) inset, 4px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+}
