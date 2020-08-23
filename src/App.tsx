@@ -11,7 +11,7 @@ import SongList, { SongListing } from './components/SongList/SongList'
 const songs:SongListing[] = [
     {src: "songs/dragonsfunk.mod", name: "Dragons Funk", format: "Protracker", channels: 4},
     {src: "songs/Skid_Row2.mod", name: "Skid Row 2", format: "Protracker", channels: 4},
-    {src: "songs/SuperFrog.mod", name: "Super Frog", format: "Protracker", channels: 4},
+    {src: "songs/SuperFrog.mod", name: "Super Frog", format: "Protracker", channels: 4, image: 'superfrog.jpg'},
     {src: "songs/too-speedy.mod", name: "Too Speedy", format: "Protracker", channels: 4},
     {src: "songs/wizkid_1.mod", name: "Wizkid round 1/8", format: "Protracker", channels: 4, image: 'wizkid.jpg'},
     {src: "songs/bedroomd.mod", name: "Bedroom Door", format: "Protracker", channels: 4},
