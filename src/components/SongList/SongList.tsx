@@ -1,6 +1,14 @@
 import React, { FunctionComponent } from 'react';
 import css from './SongList.module.scss';
 
+import IconButton from '../UI/IconButton/IconButton';
+import IconLink from '../UI/IconLink/IconLink';
+
+import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
+import { faFileDownload } from '@fortawesome/free-solid-svg-icons'
+
+
+
 export type SongListProps = {
     list: SongListing[]
     load: (song:SongListing) => any
@@ -32,7 +40,8 @@ const songList:FunctionComponent<SongListProps> = props => (
                         <td>{song.format}</td>
                         <td>{song.channels}</td>
                         <td>
-                            <button type="button" onClick={() => props.load(song)}>load</button>
+                            <IconButton icon={faPlayCircle} onClick={() => props.load(song)} title="Play"/>
+                            <IconLink icon={faFileDownload} href={song.src} title="Download"/>
                         </td>
                     </tr>
                 ))}

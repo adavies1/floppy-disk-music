@@ -35,6 +35,7 @@ function App() {
         p.load(song.src).then(() => {
             setCurrentSong(song);
             setReady(true);
+            p.play();
         });
     }
 
