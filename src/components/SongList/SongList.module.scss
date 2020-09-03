@@ -1,6 +1,47 @@
 .songTable {
+    display: none;
+
     th, td {
         padding: 5px 10px;
         border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    .noWrap {
+        white-space: nowrap;
+    }
+}
+
+.mobileSongTable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.mobileSong {
+    display: flex;
+    padding: 5px 10px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+}
+
+
+@media (min-width: 500px) {
+    .songTable {
+        display: block;
+    }
+
+    .mobileSongTable {
+        display: none;
     }
 }

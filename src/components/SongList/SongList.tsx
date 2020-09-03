@@ -42,14 +42,31 @@ const songList:FunctionComponent<SongListProps> = props => (
                         <td>{song.format}</td>
                         <td>{song.channels}</td>
                         <td>{song.size}</td>
-                        <td>
-                            <IconButton icon={faPlayCircle} onClick={() => props.load(song)} title="Play"/>
+                        <td className={css.noWrap}>
+                            <IconButton icon={faPlayCircle} onClick={() => props.load(song)} title="Load and play"/>
                             <IconLink icon={faFileDownload} href={song.src} title="Download"/>
                         </td>
                     </tr>
                 ))}
             </tbody>
         </table>
+
+        <ul className={css.mobileSongTable}>
+            {props.list.map(song => (
+                <li className={css.mobileSong} key={song.name}>
+                    <div>
+                        <strong className={css.mobileSongTitle}>{song.name}</strong>
+                        <div className={css.mobileSongInfo}>
+                            {`${song.format}, ${song.channels} channels, ${song.size}`}
+                        </div>
+                    </div>
+                    <div className={css.mobileSongControls}>
+                        <IconButton icon={faPlayCircle} onClick={() => props.load(song)} title="Load and play"/>
+                        <IconLink icon={faFileDownload} href={song.src} title="Download"/>
+                    </div>
+                </li>
+            ))}
+        </ul>
     </>
 )
 
