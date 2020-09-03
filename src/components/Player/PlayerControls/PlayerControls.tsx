@@ -1,6 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import css from './PlayerControls.module.scss';
 import { SongListing } from '../../SongList/SongList';
+import IconButton from '../../UI/IconButton/IconButton';
+
+import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPauseCircle } from '@fortawesome/free-solid-svg-icons';
+import { faStopCircle } from '@fortawesome/free-solid-svg-icons';
 
 type PlayerControlsProps = {
     play: () => any,
@@ -15,13 +20,17 @@ const PlayerControls:FunctionComponent<PlayerControlsProps> = props => (
         <div className={css.imageContainer}>
             {boxImage(props.currentSong)}
         </div>
-        <p className={css.songName}>
-            {props.currentSong.name}
+        <p>
+            <strong className={css.songName}>
+                {props.currentSong.name}
+            </strong>
+            <br/>
+            {`${props.currentSong.format}, ${props.currentSong.channels} channels, ${props.currentSong.size}`}
         </p>
         <div className={css.buttons}>
-            <button type="button" className={css.button} disabled={!props.ready} onClick={props.play}>Play</button>
-            <button type="button" className={css.button} disabled={!props.ready} onClick={props.pause}>Pause</button>
-            <button type="button" className={css.button} disabled={!props.ready} onClick={props.stop}>Stop</button>
+            <IconButton icon={faPlayCircle} onClick={props.play} title="Play"/>
+            <IconButton icon={faPauseCircle} onClick={props.pause} title="Pause"/>
+            <IconButton icon={faStopCircle} onClick={props.stop} title="Stop"/>
         </div>
     </>
 )
