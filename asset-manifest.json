@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/floppy-disk-music/static/css/main.7e1cbb6a.chunk.css",
+    "main.js": "/floppy-disk-music/static/js/main.0dd64a6a.chunk.js",
+    "main.js.map": "/floppy-disk-music/static/js/main.0dd64a6a.chunk.js.map",
+    "runtime-main.js": "/floppy-disk-music/static/js/runtime-main.94928b46.js",
+    "runtime-main.js.map": "/floppy-disk-music/static/js/runtime-main.94928b46.js.map",
+    "static/js/2.a24e8719.chunk.js": "/floppy-disk-music/static/js/2.a24e8719.chunk.js",
+    "static/js/2.a24e8719.chunk.js.map": "/floppy-disk-music/static/js/2.a24e8719.chunk.js.map",
+    "index.html": "/floppy-disk-music/index.html",
+    "precache-manifest.48360a55dd53de78ef5e2e4f885714db.js": "/floppy-disk-music/precache-manifest.48360a55dd53de78ef5e2e4f885714db.js",
+    "service-worker.js": "/floppy-disk-music/service-worker.js",
+    "static/css/main.7e1cbb6a.chunk.css.map": "/floppy-disk-music/static/css/main.7e1cbb6a.chunk.css.map",
+    "static/js/2.a24e8719.chunk.js.LICENSE.txt": "/floppy-disk-music/static/js/2.a24e8719.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/floppy-disk-music/static/media/texture.2123d7b1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.94928b46.js",
+    "static/js/2.a24e8719.chunk.js",
+    "static/css/main.7e1cbb6a.chunk.css",
+    "static/js/main.0dd64a6a.chunk.js"
+  ]
+}

@@ -1,0 +1,10 @@
+import Protracker from './Protracker';
+import ProtrackerChannel from './ProtrackerChannel';
+import { State } from './Protracker';
+import { EffectCode } from './models/EffectCode.interface';
+import ProtrackerOscillator from './ProtrackerOscillator';
+export declare function isTonePortamento(effect: EffectCode | undefined): boolean;
+export declare function onRowEnd(player: Protracker, state: State, channel: ProtrackerChannel): void;
+export declare function onRowStart(player: Protracker, state: State, channel: ProtrackerChannel): void;
+export declare function onTickStart(player: Protracker, state: State, channel: ProtrackerChannel): void;
+export declare function setOscillatorWaveform(oscillator: ProtrackerOscillator, param: number): void;
