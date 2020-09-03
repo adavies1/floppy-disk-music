@@ -19,7 +19,8 @@ export type SongListing = {
     name: string,
     format: string,
     channels: number,
-    image?: string
+    image?: string,
+    size: string
 }
 
 const songList:FunctionComponent<SongListProps> = props => (
@@ -30,6 +31,7 @@ const songList:FunctionComponent<SongListProps> = props => (
                     <th>Title</th>
                     <th>Format</th>
                     <th>Channels</th>
+                    <th>Size</th>
                     <th>&nbsp;</th>
                 </tr>
             </thead>
@@ -39,6 +41,7 @@ const songList:FunctionComponent<SongListProps> = props => (
                         <td>{song.name}</td>
                         <td>{song.format}</td>
                         <td>{song.channels}</td>
+                        <td>{song.size}</td>
                         <td>
                             <IconButton icon={faPlayCircle} onClick={() => props.load(song)} title="Play"/>
                             <IconLink icon={faFileDownload} href={song.src} title="Download"/>
