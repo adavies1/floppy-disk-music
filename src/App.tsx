@@ -17,6 +17,9 @@ const songs:SongListing[] = [
     {src: `${process.env.PUBLIC_URL}/songs/bedroomd.mod`, name: "Bedroom Door", format: "Protracker", channels: 4, size: "85KB"},
     {src: `${process.env.PUBLIC_URL}/songs/dsots-intro.mod`, name: "The Dark Side of the Spoon Intro", format: "Protracker", channels: 4, size: "179KB"},
     {src: `${process.env.PUBLIC_URL}/songs/moonclow.mod`, name: "A Clown in the Moon", format: "Protracker", channels: 8, size: "211KB"},
+    {src: `${process.env.PUBLIC_URL}/songs/ecodreams.mod`, name: "Ecodreams", format: "Protracker", channels: 4, size: "29KB"},
+    {src: `${process.env.PUBLIC_URL}/songs/wizard-2.mod`, name: "Wizard2", format: "Protracker", channels: 4, size: "22KB"},
+    {src: `${process.env.PUBLIC_URL}/songs/bitner.mod`, name: "Bitner", format: "Protracker", channels: 4, size: "130KB"},
 ];
 
 function App() {
