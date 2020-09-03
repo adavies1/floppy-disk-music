@@ -27,7 +27,7 @@ const PlayerControls:FunctionComponent<PlayerControlsProps> = props => (
 )
 
 const boxImage = (song: SongListing):React.ReactElement => (
-    <img className={css.boxImage} src={`/img/boxes/${song.image || 'unknown.jpg'}`} alt={song.name}/>
+    <img className={css.boxImage} src={`${process.env.PUBLIC_URL}/img/boxes/${song.image || 'unknown.jpg'}`} alt={song.name}/>
 )
 
 export default PlayerControls;

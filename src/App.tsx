@@ -9,14 +9,14 @@ import PlayerControls from './components/Player/PlayerControls/PlayerControls'
 import SongList, { SongListing } from './components/SongList/SongList'
 
 const songs:SongListing[] = [
-    {src: "songs/dragonsfunk.mod", name: "Dragons Funk", format: "Protracker", channels: 4},
-    {src: "songs/Skid_Row2.mod", name: "Skid Row 2", format: "Protracker", channels: 4},
-    {src: "songs/SuperFrog.mod", name: "Super Frog", format: "Protracker", channels: 4, image: 'superfrog.jpg'},
-    {src: "songs/too-speedy.mod", name: "Too Speedy", format: "Protracker", channels: 4},
-    {src: "songs/wizkid_1.mod", name: "Wizkid round 1/8", format: "Protracker", channels: 4, image: 'wizkid.jpg'},
-    {src: "songs/bedroomd.mod", name: "Bedroom Door", format: "Protracker", channels: 4},
-    {src: "songs/dsots-intro.mod", name: "The Dark Side of the Spoon Intro", format: "Protracker", channels: 4},
-    {src: "songs/moonclow.mod", name: "A Clown in the Moon", format: "Protracker", channels: 8},
+    {src: `${process.env.PUBLIC_URL}/songs/dragonsfunk.mod`, name: "Dragons Funk", format: "Protracker", channels: 4},
+    {src: `${process.env.PUBLIC_URL}/songs/Skid_Row2.mod`, name: "Skid Row 2", format: "Protracker", channels: 4},
+    {src: `${process.env.PUBLIC_URL}/songs/SuperFrogTitle.mod`, name: "Super Frog", format: "Protracker", channels: 4, image: 'superfrog.jpg'},
+    {src: `${process.env.PUBLIC_URL}/songs/too-speedy.mod`, name: "Too Speedy", format: "Protracker", channels: 4},
+    {src: `${process.env.PUBLIC_URL}/songs/wizkid_1.mod`, name: "Wizkid round 1/8", format: "Protracker", channels: 4, image: 'wizkid.jpg'},
+    {src: `${process.env.PUBLIC_URL}/songs/bedroomd.mod`, name: "Bedroom Door", format: "Protracker", channels: 4},
+    {src: `${process.env.PUBLIC_URL}/songs/dsots-intro.mod`, name: "The Dark Side of the Spoon Intro", format: "Protracker", channels: 4},
+    {src: `${process.env.PUBLIC_URL}/songs/moonclow.mod`, name: "A Clown in the Moon", format: "Protracker", channels: 8},
 ];
 
 function App() {
