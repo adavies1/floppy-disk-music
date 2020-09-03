@@ -49,7 +49,7 @@ function App() {
                 <Box>
                     {currentSong
                         ? <PlayerControls {...{ready, play, pause, stop, currentSong}}/>
-                        : <p>No song loaded</p>
+                        : <p style={{textAlign: 'center'}}>No song loaded</p>
                     }
                 </Box>
             </Grid>
