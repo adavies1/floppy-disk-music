@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/floppy-disk-music/precache-manifest.48360a55dd53de78ef5e2e4f885714db.js"
+  "/floppy-disk-music/precache-manifest.ef070dd98cd256f070e80f1f01fc9d50.js"
 );
 
 self.addEventListener('message', (event) => {
