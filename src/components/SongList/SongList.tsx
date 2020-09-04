@@ -3,6 +3,7 @@ import css from './SongList.module.scss';
 
 import IconButton from '../UI/IconButton/IconButton';
 import IconLink from '../UI/IconLink/IconLink';
+import Table from '../UI/Table/Table';
 
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 import { faFileDownload } from '@fortawesome/free-solid-svg-icons'
@@ -25,7 +26,7 @@ export type SongListing = {
 
 const songList:FunctionComponent<SongListProps> = props => (
     <>
-        <table className={css.songTable}>
+        <Table className={css.songTable}>
             <thead>
                 <tr>
                     <th>Title</th>
@@ -49,7 +50,7 @@ const songList:FunctionComponent<SongListProps> = props => (
                     </tr>
                 ))}
             </tbody>
-        </table>
+        </Table>
 
         <ul className={css.mobileSongTable}>
             {props.list.map(song => (

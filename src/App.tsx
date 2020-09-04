@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Wurlitzer } from 'wurlitzer';
+import { Song } from 'wurlitzer/players/Protracker/Protracker';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import AppInfo from './containers/AppInfo/AppInfo';
+import CurrentSong from './containers/CurrentSong/CurrentSong';
+import Songs from './containers/Songs/Songs';
 
 import Box from './components/Box/Box';
 import Grid from './components/Grid/Grid';
 import Header from './components/Header/Header'
 import PlayerControls from './components/Player/PlayerControls/PlayerControls'
-import SongList, { SongListing } from './components/SongList/SongList'
+import { SongListing } from './components/SongList/SongList'
 
 const songs:SongListing[] = [
     {src: `${process.env.PUBLIC_URL}/songs/dragonsfunk.mod`, name: "Dragons Funk", format: "Protracker", channels: 4, size: "193KB"},
@@ -23,7 +29,8 @@ const songs:SongListing[] = [
 ];
 
 function App() {
-    const [currentSong, setCurrentSong] = useState(undefined as SongListing | undefined);
+    const [currentSongListing, setCurrentSongListing] = useState(undefined as SongListing | undefined);
+    const [currentSong, setCurrentSong] = useState(undefined as Song | undefined);
     const [ready, setReady] = useState(false);
     const [player, setPlayer] = useState(undefined as Wurlitzer | undefined);
 
@@ -31,32 +38,52 @@ function App() {
     const pause = () => {player && player.pause()}
     const stop = () => {player && player.stop()}
 
-    const load = (song: SongListing):void => {
-        let p = player || new Wurlitzer();
+    const load = (songListing: SongListing):void => {
+        let p = player || new Wurlitzer(undefined, messageHandler);
         if(!player) setPlayer(p);
 
-        p.load(song.src).then(() => {
-            setCurrentSong(song);
+        p.load(songListing.src).then(() => {
+            setCurrentSongListing(songListing);
             setReady(true);
             p.play();
+            p.getInfo();
         });
     }
 
+    const messageHandler = (event: any) => {
+        if(event.data.message) {
+            switch(event.data.message) {
+                case 'songInfo':
+                    setCurrentSong(event.data.value as Song);
+                    console.log(event.data.value);
+                    break;
+            }
+        }
+    }
+
     return (
-        <div className="App">
-            <Header/>
-            <Grid>
-                <Box>
-                    <SongList list={songs} load={load}/>
-                </Box>
-                <Box>
-                    {currentSong
-                        ? <PlayerControls {...{ready, play, pause, stop, currentSong}}/>
-                        : <p style={{textAlign: 'center'}}>No song loaded</p>
-                    }
-                </Box>
-            </Grid>
-        </div>
+        <BrowserRouter basename="floppy-disk-music">
+            <div className="App">
+                <Header/>
+                <Grid>
+                    <Box>
+                        <Switch>
+                            <Route path="/songs" render={routerProps => <Songs {...routerProps} songs={songs} load={load}/>} />
+                            <Route path="/current-song" render={routerProps => <CurrentSong {...routerProps} currentSong={currentSong} currentSongListing={currentSongListing} player={player}/>} />
+                            <Route component={AppInfo}></Route>
+                        </Switch>
+                    </Box>
+                    <div>
+                        <Box stickToTop>
+                            {currentSongListing
+                                ? <PlayerControls {...{ready, play, pause, stop, currentSong: currentSongListing}}/>
+                                : <p style={{textAlign: 'center'}}>No song loaded</p>
+                            }
+                        </Box>
+                    </div>
+                </Grid>
+            </div>
+        </BrowserRouter>
     );
 }
 
