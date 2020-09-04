@@ -1,11 +1,13 @@
 export declare class Wurlitzer {
     audioContext: AudioContext;
+    extraMessageHandler: (event: any) => void;
     fileData: ArrayBuffer | undefined;
     mixer: ChannelMergerNode | undefined;
     player: AudioWorkletNode | undefined;
     connected: boolean;
     status: 'not-ready' | 'loading' | 'stopped' | 'ready' | 'loading';
-    constructor(audioContext?: AudioContext);
+    constructor(audioContext?: AudioContext, messageHandler?: (event: any) => void);
+    getInfo: () => void;
     load(source: string | File): Promise<void>;
     onMessage: (event: any) => void;
     pause(): void;
