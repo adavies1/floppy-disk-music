@@ -1,9 +1,10 @@
-import { EffectCode } from './models/EffectCode.interface';
-import { Instruction } from './models/Instruction.interface';
-import { Sample } from './models/Sample.interface';
-import ProtrackerOscillator from './ProtrackerOscillator';
+import { effectFactory } from '../effects/effectFactory';
+import { EffectCode } from '../models/EffectCode.interface';
+import { Instruction } from '../models/Instruction.interface';
+import { Sample } from '../models/Sample.interface';
+import ProtrackerOscillator from '../ProtrackerOscillator';
 export declare type state = {
-    effect: EffectCode | undefined;
+    effect: ReturnType<typeof effectFactory>;
     fineTune: number;
     frequency: number;
     instruction: Instruction | undefined;
@@ -23,14 +24,14 @@ export declare type state = {
 export default class ProtrackerChannel {
     amigaClockSpeed: number;
     bufferFrequency: number;
+    id: number;
     state: state;
-    constructor(bufferFrequency: number, amigaClockSpeed: number);
-    /****************************
-     *     Public functions     *
-     ****************************/
+    constructor(id: number, bufferFrequency: number, amigaClockSpeed: number);
     fillBuffer(buffer: Float32Array, bufferStart: number, samplesToGenerate: number): void;
-    getEffect(): EffectCode | undefined;
+    getEffect(): import("../models/EffectProcessor.interface").EffectProcessor | undefined;
+    getEffectCode(): EffectCode | undefined;
     getFineTune(): number;
+    getId(): number;
     getInstruction(): Instruction | undefined;
     getOriginalPeriod(): number;
     getFineTunedPeriod(): number;
@@ -57,12 +58,9 @@ export default class ProtrackerChannel {
     setSlideRate(rate: number): void;
     setSlideTarget(target: number): void;
     setVolume(volume: number): void;
-    /*****************************
-     *     Private functions     *
-     *****************************/
-    _calculateFrequency(): void;
-    _calculateFineTunedPeriod(): void;
-    _calculateSampleIncrement(): void;
-    _getSampleValue(): number;
-    _incrementSamplePosition(): void;
+    private _calculateFrequency;
+    private _calculateFineTunedPeriod;
+    private _calculateSampleIncrement;
+    private _getSampleValue;
+    private _incrementSamplePosition;
 }

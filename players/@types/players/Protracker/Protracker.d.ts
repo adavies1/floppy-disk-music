@@ -3,7 +3,7 @@ import * as appConstants from '../../constants';
 import { Instruction } from './models/Instruction.interface';
 import { Sample } from './models/Sample.interface';
 import Player from "../Player/Player";
-import ProtrackerChannel from "./ProtrackerChannel";
+import ProtrackerChannel from "./ProtrackerChannel/ProtrackerChannel";
 export declare type Song = {
     channelCount: number;
     patternCount: number;
@@ -52,9 +52,6 @@ export default class Protracker extends Player {
     song: Song;
     state: State;
     constructor(audioContext: AudioContext, fileData: ArrayBuffer);
-    /****************************
-     *     Public functions     *
-     ****************************/
     getChannels(): ProtrackerChannel[];
     getPatternDelay(): number;
     getPatternLoopCount(): number;
@@ -87,13 +84,7 @@ export default class Protracker extends Player {
     setTempo(tempo: number): void;
     setTick(tick: number): boolean;
     skipToPosition(newPosition: number): boolean;
-    /***************************
-     *     Event functions     *
-     ***************************/
     onAudioProcess(channelBuffers: Float32Array[]): boolean;
-    /*****************************
-     *     Private functions     *
-     *****************************/
     private _assignInstructionsToChannels;
     private _calculateNumberOfSamplesToGenerate;
     private _calculateSamplesPerTick;

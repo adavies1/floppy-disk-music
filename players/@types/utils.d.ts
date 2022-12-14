@@ -3,6 +3,7 @@ export declare function loadFile(source: string | File): Promise<ArrayBuffer>;
 export declare function loadFileFromDisk(source: File): Promise<ArrayBuffer>;
 export declare function loadFileFromUrl(source: string): Promise<ArrayBuffer>;
 export declare function pickRandom(...params: any[]): any;
+export declare function minMaxLimit(value: number, min: number, max: number): number;
 /**
  * Given a max of 3, it will return 0,1,2
  */
