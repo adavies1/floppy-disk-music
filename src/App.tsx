@@ -26,6 +26,9 @@ const songs:SongListing[] = [
     {src: `${process.env.PUBLIC_URL}/songs/ecodreams.mod`, name: "Ecodreams", format: "Protracker", channels: 4, size: "29KB"},
     {src: `${process.env.PUBLIC_URL}/songs/wizard-2.mod`, name: "Wizard2", format: "Protracker", channels: 4, size: "22KB"},
     {src: `${process.env.PUBLIC_URL}/songs/bitner.mod`, name: "Bitner", format: "Protracker", channels: 4, size: "130KB"},
+    {src: `${process.env.PUBLIC_URL}/songs/jackson.mod`, name: "Smooth Criminal remix", format: "Protracker", channels: 4, size: "131KB"},
+    {src: `${process.env.PUBLIC_URL}/songs/2_cute_4_u.mod`, name: "Too cute 4 u", format: "Protracker", channels: 4, size: "11KB"},
+    {src: `${process.env.PUBLIC_URL}/songs/sota.mod`, name: "Spaceballs State of the art", format: "Protracker", channels: 4, size: "231KB"},
 ];
 
 function App() {
