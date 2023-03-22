@@ -13,7 +13,7 @@ const appInfo:FunctionComponent<AppInfoProps> = props => (
     <>
         <p>
             Welcome! To begin, please go to the <Link to='/songs'>song list</Link>, and then press the play button next to a track.
-            Currently, only Chrome and Firefox are supported. <b>The songs that play will be loud!</b>
+            Currently, only Chrome and Firefox are supported.
         </p>
         <h3>What is this website?</h3>
         <p>
