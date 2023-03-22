@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/floppy-disk-music/static/css/main.2aea178d.css",
-    "main.js": "/floppy-disk-music/static/js/main.e3cef2e3.js",
+    "main.js": "/floppy-disk-music/static/js/main.051c75c5.js",
     "static/media/texture.png": "/floppy-disk-music/static/media/texture.1e26e646d821bb47a4f6.png",
     "index.html": "/floppy-disk-music/index.html",
     "main.2aea178d.css.map": "/floppy-disk-music/static/css/main.2aea178d.css.map",
-    "main.e3cef2e3.js.map": "/floppy-disk-music/static/js/main.e3cef2e3.js.map"
+    "main.051c75c5.js.map": "/floppy-disk-music/static/js/main.051c75c5.js.map"
   },
   "entrypoints": [
     "static/css/main.2aea178d.css",
-    "static/js/main.e3cef2e3.js"
+    "static/js/main.051c75c5.js"
   ]
 }
